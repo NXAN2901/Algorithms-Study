@@ -11,7 +11,7 @@ memory works. Your computer looks like a giant set of drawers, and
 each drawer has an address. </b>
 
 <p align = "center">
-    <img src = "../../res/images/address-slots-memory.png" width="360" height="240"></p>
+    <img src = "../../res/images/array-linkedlist/1.png" width="360" height="240">
     <p align = "center"><i>Slot in memory</i></p>
 </p>
 
@@ -28,7 +28,7 @@ Using an array means all your tasks are stored contiguously (right next to each 
 Suppose you want to add a fourth task. But the next drawer is taken up by someone else’s stuff!
 
 <p align = "center">
-    <img src = "../../res/images/memory-array-store.png" width="640" height="240"></p>
+    <img src = "../../res/images/array-linkedlist/2.png" width="640" height="240">
 </p>
 
 In this case, you need to ask your computer for a different chunk of memory that can fit four tasks. Then you need to move all your tasks there. If you’re out of space and need to move to a new spot in memory every time, adding a new item will be really slow.
@@ -47,7 +47,7 @@ This is a good workaround, but you should be aware of a couple of downsides:
 The elements in an array are numbered. This numbering starts from 0, not 1. For example, in this array, 20 is at position 1 and 10 is at position 0.
 
 <p align = "center">
-    <img src = "../../res/images/array-indexed.png" width="320"></p>
+    <img src = "../../res/images/array-linkedlist/3.png" width="320">
 </p>
 
 ```
@@ -57,7 +57,7 @@ The position of an element is called its index. So instead of saying, "20 is at 
 Here are the run times for common operations on arrays and lists:
 
 <p align = "center">
-    <img src = "../../res/images/bigO-array-list.png" width="320"></p>
+    <img src = "../../res/images/array-linkedlist/4.png" width="320">
 </p>
 
 ## Linked List
@@ -69,7 +69,7 @@ It’s like a treasure hunt. You go to the first address, and it says, "The next
 ```
 
 <p align = "center">
-    <img src = "../../res/images/linked-list-memory.png" width="640" height="240"></p>
+    <img src = "../../res/images/array-linkedlist/5.png" width="640" height="240">
 </p>
 
 Adding an item to a linked list is easy: you stick it anywhere in memory and store the address with the previous item.
@@ -101,3 +101,54 @@ With a linked list, the elements aren’t next to each other, so you can’t ins
 ```
 
 <i> => Arrays are great if you want to read random elements, because you can look up any element in your array instantly. </i>
+
+# Inserting into the middle of a list
+
+Suppose you want your todo list to work more like a calendar. Earlier, you were adding things to the end of the list.Now you want to add them in the order in which they should be done.
+
+<p align = "center">
+    <img src = "../../res/images/array-linkedlist/6.png" width="480" height="240">
+</p>
+<p align = "center"> <i> => What’s better if you want to insert elements in the middle: arrays or lists? </i></p>
+
+<p align = "center">
+
+|                                      List                                      |                                                           Array                                                            |
+| :----------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|              Easy to change what the previous element points to.               | have to shift all the rest of the elements down. if there’s no space, you might have to copy everything to a new location. |
+| <img src = "../../res/images/array-linkedlist/7.png" width="480" height="240"> |                       <img src = "../../res/images/array-linkedlist/8.png" width="480" height="240">                       |
+
+</p>
+
+```
+=> Lists are better if you want to insert elements into the middle
+```
+
+# Deletions
+
+What if you want to delete an element? Again, lists are better, because you just need to change what the previous element points to.
+
+ With arrays, everything needs to be moved up when you delete an element.
+
+ ```
+ Unlike insertions, deletions will always work. Insertions can fail sometimes when there’s no space left in memory. But you can always delete an element.
+ ```
+
+ Here are the run times for common operations on arrays and linked lists:
+ <p align = "center">
+    <img src = "../../res/images/array-linkedlist/9.png" width="360" height="240">
+</p>
+
+```
+It’s worth mentioning that insertions and deletions are O(1) time only if you can instantly access the element to be deleted.
+
+It’s a commonpractice to keep track of the first and last items in a linked list, so it would take only O(1) time to delete those.
+```
+
+Which are used more: arrays or lists? Obviously, it depends on the use case. <b> But arrays see a lot of use because they allow <i>"Random Access"</i> </b>
+
+```
+There are two different types of access: Random Access and Sequential Access. Sequential Access means reading the elements one by one, starting at the first element.
+```
+
+Linked lists can only do sequential access. If you want to read the 10th element of a linked list, you have to read the first 9 elements and follow the links to the 10th element.
