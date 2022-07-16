@@ -116,7 +116,7 @@ Suppose you want your todo list to work more like a calendar. Earlier, you were 
 |                                      List                                      |                                                           Array                                                            |
 | :----------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
 |              Easy to change what the previous element points to.               | have to shift all the rest of the elements down. if there’s no space, you might have to copy everything to a new location. |
-| <img src = "../../res/images/array-linkedlist/7.png" width="480" height="240"> |                       <img src = "../../res/images/array-linkedlist/8.png" width="480" height="240">                       |
+| <img src = "../../res/images/array-linkedlist/7.png" width="640" height="240"> |                       <img src = "../../res/images/array-linkedlist/8.png" width="360" height="240">                       |
 
 </p>
 
@@ -128,13 +128,14 @@ Suppose you want your todo list to work more like a calendar. Earlier, you were 
 
 What if you want to delete an element? Again, lists are better, because you just need to change what the previous element points to.
 
- With arrays, everything needs to be moved up when you delete an element.
+With arrays, everything needs to be moved up when you delete an element.
 
- ```
- Unlike insertions, deletions will always work. Insertions can fail sometimes when there’s no space left in memory. But you can always delete an element.
- ```
+```
+Unlike insertions, deletions will always work. Insertions can fail sometimes when there’s no space left in memory. But you can always delete an element.
+```
 
- Here are the run times for common operations on arrays and linked lists:
+Here are the run times for common operations on arrays and linked lists:
+
  <p align = "center">
     <img src = "../../res/images/array-linkedlist/9.png" width="360" height="240">
 </p>
@@ -148,7 +149,7 @@ It’s a commonpractice to keep track of the first and last items in a linked li
 Which are used more: arrays or lists? Obviously, it depends on the use case. <b> But arrays see a lot of use because they allow <i>"Random Access"</i> </b>
 
 ```
-There are two different types of access: Random Access and Sequential Access. Sequential Access means reading the elements one by one, starting at the first element.
+There are two different types of access: Random Access and Sequential Access. Sequential Access means reading the elements one by one, starting at the first element. Random Access means you can jump directly to the specific element.
 ```
 
 Linked lists can only do sequential access. If you want to read the 10th element of a linked list, you have to read the first 9 elements and follow the links to the 10th element.
